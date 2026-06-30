@@ -19,6 +19,7 @@ import {
     LineBasicMaterial,
     Line
 } from 'three';
+import { emissive } from 'three/tsl';
 
 interface Planet {
 	mesh: Mesh;
@@ -76,7 +77,7 @@ export class SolarSystem {
 	}
 
 	private createSun() {
-		const sunGeometry = new SphereGeometry(1.5, 64, 64);
+		const sunGeometry = new SphereGeometry(2.5, 64, 64);
 		const sunMaterial = new MeshStandardMaterial({
 			color: 0xfdb813,
 			emissive: 0xfdb813,
@@ -143,7 +144,9 @@ export class SolarSystem {
 				speed: 0.04,
 				color: 0x8c7853,
 				metalness: 0.7,
-				roughness: 0.3
+				roughness: 1,
+				emissive: 0x8c7853,
+				emissiveIntensity: 2.0
 			},
 			{
 				name: 'Venus',
@@ -152,7 +155,9 @@ export class SolarSystem {
 				speed: 0.015,
 				color: 0xffc649,
 				metalness: 0.6,
-				roughness: 0.4
+				roughness: 1,
+				emissive: 0x8c7853,
+				emissiveIntensity: 2.0
 			},
 			{
 				name: 'Earth',
@@ -161,7 +166,9 @@ export class SolarSystem {
 				speed: 0.01,
 				color: 0x4a90e2,
 				metalness: 0.5,
-				roughness: 0.5
+				roughness: 1,
+				emissive: 0x8c7853,
+				emissiveIntensity: 2.0
 			},
 			{
 				name: 'Mars',
@@ -170,7 +177,9 @@ export class SolarSystem {
 				speed: 0.008,
 				color: 0xe27b58,
 				metalness: 0.6,
-				roughness: 0.6
+				roughness: 1,
+				emissive: 0x8c7853,
+				emissiveIntensity: 2.0
 			},
 			{
 				name: 'Jupiter',
@@ -179,7 +188,9 @@ export class SolarSystem {
 				speed: 0.002,
 				color: 0xc88b3a,
 				metalness: 0.4,
-				roughness: 0.6
+				roughness: 1,
+				emissive: 0x8c7853,
+				emissiveIntensity: 2.0
 			},
 			{
 				name: 'Saturn',
@@ -188,7 +199,9 @@ export class SolarSystem {
 				speed: 0.0009,
 				color: 0xf4d4a6,
 				metalness: 0.35,
-				roughness: 0.65
+				roughness: 1,
+				emissive: 0x8c7853,
+				emissiveIntensity: 2.0
 			},
 			{
 				name: 'Uranus',
@@ -197,7 +210,9 @@ export class SolarSystem {
 				speed: 0.0004,
 				color: 0x4fd0e7,
 				metalness: 0.5,
-				roughness: 0.5
+				roughness: 1,
+				emissive: 0x8c7853,
+				emissiveIntensity: 2.0
 			},
 			{
 				name: 'Neptune',
@@ -206,7 +221,9 @@ export class SolarSystem {
 				speed: 0.0001,
 				color: 0x4166f5,
 				metalness: 0.55,
-				roughness: 0.45
+				roughness: 1,
+				emissive: 0x8c7853,
+				emissiveIntensity: 2.0
 			}
 		];
 
@@ -229,7 +246,7 @@ export class SolarSystem {
 			const shellMaterial = new MeshStandardMaterial({
 				color: new Color(data.color),
 				emissive: new Color(data.color).multiplyScalar(0.3),
-				emissiveIntensity: 0.2,
+				emissiveIntensity: 20,
 				metalness: data.metalness * 0.5,
 				roughness: data.roughness + 0.2,
 				transparent: true,

@@ -40,8 +40,8 @@ export class App {
 		this.postManager = new PostManager();
 		this.postManager.createBloomEffect({
 			luminanceSmoothing: 1,
-			intensity: 1.5,
-			radius: 0.12
+			intensity: 10,
+			radius: 0.5
 		});
 		this.postManager.createVignetteEffect();
 		// this.postManager.createSMAAEffect();
@@ -60,7 +60,7 @@ export class App {
 	private init() {
 		// const lights = new LightingManager();
 		const camMan = new CameraManager();
-		globalStore.setState({ fogColor: '#020128', fogDensity: 0.015 });
+		globalStore.setState({ fogColor: '#02003d', fogDensity: 0.0 });
 		// camMan.camera.position.set(500, 150, 0);
 		// camMan.orbitControls.target.set(0, 150, 0);
 

@@ -425,8 +425,8 @@ export default class PostManager {
 
 	createVignetteEffect() {
 		const vignetteOptions = {
-			offset: 0.1,
-			darkness: 0.67,
+			offset: 0.2,
+			darkness: 1,
 			technique: VignetteTechnique.DEFAULT,
 			blendFunction: BlendFunction.SET
 		};
